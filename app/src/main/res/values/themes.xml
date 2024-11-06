@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AncroRutasYgestion" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_dimerc</item>
+        <item name="colorPrimaryVariant">@color/primary_dimerc_variant</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary_dimerc_variant</item>
+        <item name="colorSecondaryVariant">@color/secondary_dimerc</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here.
+        <item name="bottomSheetDragHandleStyle">@style/Widget.Material3.BottomSheet.DragHandle</item>-->
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/fragment_shape</item>
+    </style>
+    <style name="BottomSheetDialogCustom">
+        <item name="srcCompat">@drawable/sheet_drag_handle</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:contentDescription"><![CDATA[Drag handle]]></item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="tint">@color/secondary_dimerc</item>
+    </style>
+</resources>

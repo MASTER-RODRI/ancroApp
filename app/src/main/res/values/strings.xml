@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">AncroRutasYgestion</string>
+    <string-array name="realizado">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="obraoevento">
+        <item>Obra</item>
+        <item>Evento</item>
+    </string-array>
+    <string-array name="volumen">
+        <item>Alto</item>
+        <item>Medio</item>
+        <item>Bajo</item>
+    </string-array>
+    <string-array name="motivos">
+        <item>HORA DE SERVICIO</item>
+        <item>ACCESO A OBRA</item>
+        <item>CLIENTE CANCELA</item>
+        <item>VOLUMEN CISTERNA</item>
+        <item>AVERIA PORTATIL</item>
+        <item>AVERIO UNIDAD</item>
+        <item>CLIENTE REPROGRAMO</item>
+        <item>EVENTO SOCIAL</item>
+        <item>CONTRATO ANULADO</item>
+        <item>ERROR VENDEDOR</item>
+        <item>EJECUCION PARCIAL</item>
+        <item>ANULACION ANTICIPADA</item>
+    </string-array>
+</resources>

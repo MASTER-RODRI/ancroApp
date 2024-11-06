@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TecnicoActivity">
+
+    <RelativeLayout
+        android:id="@+id/qrlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Vista previa de la cámara -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/loginView"
+                layout="@layout/menu_header_layout"
+                android:elevation="4dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/corner_radius_qr"
+                        android:padding="4dp"
+                        app:cornerRadius="20dp">
+
+                        <SurfaceView
+                            android:id="@+id/cameraView1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/corner_rounded" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="53dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:hint="Serie"
+                                    app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.63">
+
+                                    <EditText
+                                        android:id="@+id/Serie"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:autofillHints="Serie"
+                                        android:inputType="text"
+                                        android:maxLines="1" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="53dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:hint="Realizado"
+                                    app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.63">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/realizado"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:autofillHints="Realizado"
+                                        android:inputType="none"
+                                        android:padding="2dp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                                <!--<TextView
+                            android:id="@+id/nombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:lines="2"
+                            android:maxLines="10"
+                            android:text=""
+                            android:textAlignment="center" />-->
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="4dp"
+                                android:text="Confirmacion del servicio"
+                                android:textColor="@color/primary_dimerc"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                               <!-- <LinearLayout
+                                    android:id="@+id/Realizadoview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="53dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:focusable="auto"
+                                        android:hint="Hora de Inicio del servicio"
+                                        app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.63">
+
+                                        <EditText
+                                            android:id="@+id/HoraInicio"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:autofillHints="Hora de Inicio del servicio"
+                                            android:inputType="datetime"
+                                            android:maxLines="1" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="53dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:focusable="auto"
+                                        android:hint="Obra o evento"
+                                        app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.63">
+
+                                        <AutoCompleteTextView
+                                            android:id="@+id/obraoevento"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:autofillHints="Obra o evento"
+                                            android:inputType="none"
+                                            android:padding="2dp" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="53dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:focusable="auto"
+                                        android:hint="Cantidad de papel higienico"
+                                        app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.63">
+
+                                        <EditText
+                                            android:id="@+id/cantPapHigi"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:autofillHints="Cantidad de papel higienico"
+                                            android:inputType="number"
+                                            android:maxLines="1" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="53dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:focusable="auto"
+                                        android:hint="Cantidad de quimico"
+                                        app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.63">
+
+                                        <EditText
+                                            android:id="@+id/cantQuimico"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:autofillHints="Cantidad de quimico"
+                                            android:inputType="number"
+                                            android:maxLines="1" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="53dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:focusable="auto"
+                                        android:hint="Cantidad de bolsas"
+                                        app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.63">
+
+                                        <EditText
+                                            android:id="@+id/cantbolsas"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:autofillHints="Cantidad de bolsas"
+                                            android:inputType="number"
+                                            android:maxLines="1" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="53dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:focusable="auto"
+                                        android:hint="Jabón"
+                                        app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.63">
+
+                                        <EditText
+                                            android:id="@+id/jabon"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:autofillHints="Jabón"
+                                            android:inputType="text"
+                                            android:maxLines="1" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="53dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:focusable="auto"
+                                        android:hint="Volumen de residuo %"
+                                        app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.63">
+
+                                        <EditText
+                                            android:id="@+id/volumenresiduo"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:autofillHints="Volumen de residuo %"
+                                            android:inputType="number"
+                                            android:maxLines="1" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+                                </LinearLayout>-->
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="4dp"
+                                        android:focusable="auto"
+                                        android:focusableInTouchMode="false"
+                                        android:hint="Observaciones"
+                                        android:inputType="textMultiLine"
+                                        android:textCursorDrawable="@null"
+                                        app:layout_constraintBottom_toTopOf="@+id/textInputPassword"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.63">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/observaciones"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:autofillHints="Observaciones"
+                                            android:gravity="top|left"
+                                            android:inputType="textMultiLine"
+                                            android:lines="3"
+                                            android:maxLines="10" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/cameraspot"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="16dp"
+                                    android:visibility="gone">
+
+                                    <Button
+                                        android:id="@+id/btnTakePhoto"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:backgroundTint="@color/secondary_dimerc"
+                                        android:text="Tomar Foto" />
+
+                                    <ImageView
+                                        android:id="@+id/imgPreview"
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:layout_marginTop="16dp"
+                                        android:visibility="gone" />
+
+                                    <Button
+                                        android:id="@+id/btnDeletePhoto"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:backgroundTint="@android:color/holo_red_light"
+                                        android:text="Eliminar Foto"
+                                        android:visibility="gone" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </ScrollView>
+                    <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/nombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text=""
+                            android:textAlignment="center" />
+                        <TextView
+                            android:id="@+id/codigo_patrimonial"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text=""
+                            android:textAlignment="center" />
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Bienes escaneados"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+                      <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent">
+
+                         <androidx.recyclerview.widget.RecyclerView
+                             android:layout_width="match_parent"
+                             android:id="@+id/ReciclerviewListaBien"
+                             android:layout_height="match_parent"
+                             android:padding="3dp" />
+                     </LinearLayout>
+
+                 <com.google.android.material.floatingactionbutton.FloatingActionButton
+                          android:id="@+id/floatingActionButton"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="0"
+                          android:clickable="true"
+                          app:backgroundTint="@color/orange_gore_700"
+                          app:srcCompat="@drawable/svg_torch" />
+                </LinearLayout>-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/Cerrar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@android:color/holo_red_light"
+                            android:text="Cancelar" />
+
+                        <Button
+                            android:id="@+id/guardarDatos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/secondary_dimerc"
+                            android:text="Guardar" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <!-- <Button
+             android:id="@+id/scanButton"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerInParent="true"
+             android:text="Escanear QR" />
+
+          Otros elementos de diseño aquí -->
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
