@@ -2,9 +2,7 @@ package com.example.ancrorutasygestion.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.graphics.Color;
+
 
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
@@ -38,9 +36,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class AdaptadoresListaRutas extends RecyclerView.Adapter<ListaRutasHolder> {
-    private List<PojoRutaVista> listDocs = new ArrayList<>();
+    private final List<PojoRutaVista> listDocs = new ArrayList<>();
     private BottomSheetDialog dialog;
-    private Context c;
+    private final Context c;
 
     public void addInventaris(PojoRutaVista lr){
         if(!lr.getEstadoRuta().equals("N") && !lr.getEstadoRuta().equals("C")  ) {
@@ -74,8 +72,6 @@ public class AdaptadoresListaRutas extends RecyclerView.Adapter<ListaRutasHolder
         holder.getDireccion().setText("Dir.: " + model.getDireecion());
         holder.getRucycodigo().setText(model.getRucodatos());
         holder.getEstado().setText(model.getEstadoRuta());//model.getEstado()
-        dialog =  new BottomSheetDialog(c,R.style.AppBottomSheetDialogTheme);
-        CreateDialog(model);
         Drawable background = holder.getParairADetalle().getBackground();
         Drawable wrappedDrawable = DrawableCompat.wrap(background);
         DrawableCompat.setTintList(wrappedDrawable, null);
@@ -99,19 +95,27 @@ public class AdaptadoresListaRutas extends RecyclerView.Adapter<ListaRutasHolder
                 });
                 // holder.getParairADetalle().setVisibility(View.GONE);
             }
-            dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+
        // }
 
     }
     private void nextActivity(PojoRutaVista model){
-        if(model.isTipo()) {
+        if (dialog == null) {
+            dialog = new BottomSheetDialog(c, R.style.AppBottomSheetDialogTheme);
+        }
+        CreateDialog(model);
+        if(dialog!=null){
             dialog.show();
+        }
+        //dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        //if(model.isTipo()) {
+           // dialog.show();
             //Intent intent = new Intent(c, RoutesActivity.class);
             //intent.putExtra("idRuta", model.getId()); // Si necesitas pasar datos a la nueva actividad
             //c.startActivity(intent);
-        }else{
-            dialog.show();
-        }
+        //}else{
+        //    dialog.show();
+        //}
     }
     public void CreateDialog(PojoRutaVista model){
         View v = LayoutInflater.from(c).inflate(R.layout.bottom_dialog_route,null);
@@ -182,6 +186,7 @@ public class AdaptadoresListaRutas extends RecyclerView.Adapter<ListaRutasHolder
             intent.putExtra("docChofer", model.getDocumentoChofer());
             c.startActivity(intent);
         });
+        dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
         dialog.setContentView(v);
     }
     @Override
