@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private RecyclerView listaRutas;
     private AdaptadoresListaRutas adapterlista;
     private ImageButton backButtonMenu;
-    private TextView menuTextHead;
+    private TextView menuTextHead,Rutasasignadas;
     private Button inciarViajeButton;
     private IRutas iRutas;
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             progressDialog.setCancelable(false);
             progressDialog.setMessage("Buscando datos...");
 
+            Rutasasignadas=(TextView) findViewById(R.id.Rutasasignadas);
             if (!conductor) {
                 inciarViajeButton.setVisibility(View.GONE);
             } else {
@@ -244,7 +245,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                               Toast.makeText(MainActivity.this,"No se ecnontraron rutas",Toast.LENGTH_SHORT).show();
+                                Rutasasignadas.setVisibility(View.VISIBLE);
+                               Toast.makeText(MainActivity.this,"No se encontraron rutas",Toast.LENGTH_SHORT).show();
                             }
                         });
 

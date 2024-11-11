@@ -22,6 +22,19 @@
         app:layout_constraintTop_toBottomOf="@+id/loginView"
         app:layout_constraintVertical_bias="1.0">
 
+        <TextView
+            android:id="@+id/Rutasasignadas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="No se encontraron rutas asignadas a tu transporte para el dia de hoy"
+            android:textColor="@color/primary_dimerc_variant"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe"
             android:layout_width="match_parent"
@@ -33,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
+
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <Button
@@ -42,5 +56,6 @@
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/secondary_dimerc"
             android:text="Iniciar viaje" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

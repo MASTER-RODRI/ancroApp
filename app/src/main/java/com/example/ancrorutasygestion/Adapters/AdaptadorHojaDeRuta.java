@@ -57,30 +57,27 @@ public class AdaptadorHojaDeRuta  extends RecyclerView.Adapter<HojaDeRutaHolder>
     @Override
     public void onBindViewHolder(@NonNull HojaDeRutaHolder holder, int position) {
         PojoDetalleDeContancia model = lista.get(position);
+        holder.getEstadoMantenimiento().setChecked(false);
         holder.getQrdatatext().setText("Serie: "+model.getSerie());
         holder.getProductoname().setText(model.getArticulo());
-        holder.getEstadoMantenimiento().setChecked(model.getRealizado());
         holder.getTipoMantenimiento().setText(EstadoGeneral);
         Drawable background = holder.getParairADetalle2().getBackground();
         Drawable wrappedDrawable = DrawableCompat.wrap(background);
         DrawableCompat.setTintList(wrappedDrawable, null);
+
+        holder.getEstadoMantenimiento().setChecked(model.getRealizado());
         holder.getEstadoMantenimiento().setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                Date currenttime = Calendar.getInstance().getTime();
+                Date currentTime = Calendar.getInstance().getTime();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-                String currentTimeString = dateFormat.format(currenttime);
+                String currentTimeString = dateFormat.format(currentTime);
                 model.setFechaDeEscaneo(currentTimeString);
-                if (isChecked) {
-                    model.setRealizado(true);
-                    // El usuario ha encendido el Switch manualmente
-                } else {
-                    model.setRealizado(false);
-                    // El usuario ha apagado el Switch manualmente
-                }
+                model.setRealizado(isChecked);
             }
         });
+        holder.getEstadoMantenimiento().setChecked(model.getRealizado());
     }
 
     @Override

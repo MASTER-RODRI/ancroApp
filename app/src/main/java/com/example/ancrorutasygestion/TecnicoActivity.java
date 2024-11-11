@@ -273,10 +273,15 @@ public class TecnicoActivity extends AppCompatActivity {
         });
 
         guardarDatos.setOnClickListener(v -> {
-            if(qrCode!=null) {
-                if (!qrCode.isEmpty()) {
+            if(serie.getText()!=null) {
+                if (!serie.getText().toString().isEmpty() && serie.getText().toString().length()>1) {
                     ObtenerBienPorQr(qrCode,ProcesoRealizado,observaciones.getText().toString(),base64Image);
                 }
+                else{
+                    Toast.makeText(this,"Debe scanear o ingresar una serie",Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Toast.makeText(this,"Debe scanear o ingresar una serie",Toast.LENGTH_SHORT).show();
             }
         });
         btnTakePhoto.setOnClickListener(v -> {
@@ -361,6 +366,7 @@ public class TecnicoActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            isQrCodeDetected=false;
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             imgPreview.setImageBitmap(imageBitmap);

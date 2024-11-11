@@ -10,8 +10,8 @@ android {
         applicationId = "com.endevs.ancrorutasygestion"
         minSdk = 25
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.0.1"
+        versionCode = 3
+        versionName = "1.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         //buildConfigField("String", "MAPTILER_API_KEY", "${project.findProperty("MAPTILER_API_KEY")}")
