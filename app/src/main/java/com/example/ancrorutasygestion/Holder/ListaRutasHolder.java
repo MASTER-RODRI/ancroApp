@@ -1,5 +1,6 @@
 package com.example.ancrorutasygestion.Holder;
 
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,13 +24,13 @@ public class ListaRutasHolder extends RecyclerView.ViewHolder {
     private TextView cliente;
     private TextView direccion;
     private TextView estado;
-    private LinearLayout parairADetalle;
+    private CardView parairADetalle;
 
-    public LinearLayout getParairADetalle() {
+    public CardView getParairADetalle() {
         return parairADetalle;
     }
 
-    public void setParairADetalle(LinearLayout parairADetalle) {
+    public void setParairADetalle(CardView parairADetalle) {
         this.parairADetalle = parairADetalle;
     }
 

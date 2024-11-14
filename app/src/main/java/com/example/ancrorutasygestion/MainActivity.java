@@ -241,6 +241,10 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                                     rut.getFolioContrato(), true, rut.getLatitud(), rut.getLongitud(), rut.getDocumentoChofer(), rut.getEstadoRuta());
                             adapterlista.addInventaris(pj);
                         });
+                        if(adapterlista.ObtenerListaRutas().size()==0){
+                            Rutasasignadas.setText("Ya no tiene mas puntos de ruta pendientes por hoy");
+                            Rutasasignadas.setVisibility(View.VISIBLE);
+                        }
                     }else{
                         runOnUiThread(new Runnable() {
                             @Override

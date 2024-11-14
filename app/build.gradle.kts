@@ -52,6 +52,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.google.android.gms:play-services-location:18.0.0")
+    implementation("com.android.support:cardview-v7:21.0.3")
     // implementation("org.maplibre.gl:android-sdk:10.0.2")
     // implementation("org.maplibre.gl:android-sdk:9.5.0")
     //implementation("org.osmdroid:osmdroid-android:6.1.14")

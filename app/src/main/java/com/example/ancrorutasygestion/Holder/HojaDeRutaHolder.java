@@ -1,5 +1,6 @@
 package com.example.ancrorutasygestion.Holder;
 
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
@@ -21,13 +22,13 @@ public class HojaDeRutaHolder extends RecyclerView.ViewHolder  {
     }
     private TextView qrdatatext,productoname,tipoMantenimiento;
     private Switch EstadoMantenimiento;
-    private LinearLayout parairADetalle2;
+    private CardView parairADetalle2;
 
-    public LinearLayout getParairADetalle2() {
+    public CardView getParairADetalle2() {
         return parairADetalle2;
     }
 
-    public void setParairADetalle2(LinearLayout parairADetalle2) {
+    public void setParairADetalle2(CardView parairADetalle2) {
         this.parairADetalle2 = parairADetalle2;
     }
 

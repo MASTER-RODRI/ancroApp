@@ -30,7 +30,6 @@
             android:gravity="center"
             android:padding="15dp"
             android:text="No se encontraron rutas asignadas a tu transporte para el dia de hoy"
-            android:textColor="@color/primary_dimerc_variant"
             android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="gone" />
