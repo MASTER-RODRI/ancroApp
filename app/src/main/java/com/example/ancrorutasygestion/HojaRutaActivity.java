@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -63,7 +64,7 @@ public class HojaRutaActivity extends AppCompatActivity {
         private Detalles_hoja_ruta viewModel;
     //viewmodel
     private Button guardarInsumos,salirbutton;
-    private ImageButton backButtonMenu;
+    private CardView backButtonMenu;
     private TextView menuTextHead;
     private ArrayList<String> miArray = new ArrayList<String>();
     private RecyclerView reciclerView;
@@ -97,7 +98,7 @@ public class HojaRutaActivity extends AppCompatActivity {
         rucycodigo= (TextView)findViewById(R.id.rucycodigo);
 
         //header
-        backButtonMenu = (ImageButton) findViewById(R.id.back_button_menu);
+        backButtonMenu = (CardView) findViewById(R.id.back_button_menu);
         backButtonMenu.setVisibility(View.VISIBLE);
         backButtonMenu.setOnClickListener(v -> {
             finish();

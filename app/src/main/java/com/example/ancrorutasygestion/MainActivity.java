@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private List<PojoRutaVista> reporte = new ArrayList<PojoRutaVista>();
     private RecyclerView listaRutas;
     private AdaptadoresListaRutas adapterlista;
-    private ImageButton backButtonMenu;
+    private CardView backButtonMenu;
     private TextView menuTextHead,Rutasasignadas;
     private Button inciarViajeButton;
     private IRutas iRutas;
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 finish();
             }
 
-            backButtonMenu = (ImageButton) findViewById(R.id.back_button_menu);
+            backButtonMenu = (CardView) findViewById(R.id.back_button_menu);
             backButtonMenu.setVisibility(View.GONE);
             menuTextHead = (TextView) findViewById(R.id.menu_header);
             menuTextHead.setText("Hoja de ruta");

@@ -5,6 +5,7 @@ import static com.example.ancrorutasygestion.Apis.BuildRetrofit.buildRetrofit;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -33,7 +34,7 @@ import retrofit2.Retrofit;
 public class CancelActivity extends AppCompatActivity {
     private TextView direccion, estado, cliente, rucycodigo;
     private String HoraTrabajo,valorSleect;
-    private ImageButton backButtonMenu;
+    private CardView backButtonMenu;
     private TextView menuTextHead;
     private Button ConfirmarCancelar;
     private ProgressDialog progressDialog;
@@ -73,7 +74,7 @@ public class CancelActivity extends AppCompatActivity {
             finish();
         }
         //header
-        backButtonMenu = (ImageButton) findViewById(R.id.back_button_menu);
+        backButtonMenu = (CardView) findViewById(R.id.back_button_menu);
         backButtonMenu.setVisibility(View.VISIBLE);
         backButtonMenu.setOnClickListener(v -> {
             finish();

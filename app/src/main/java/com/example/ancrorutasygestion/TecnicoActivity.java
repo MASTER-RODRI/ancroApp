@@ -12,6 +12,7 @@ import android.hardware.Camera;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Base64;
@@ -73,7 +74,7 @@ public class TecnicoActivity extends AppCompatActivity {
     private SurfaceView cameraView;
     private CameraSource cameraSource;
     private boolean isQrCodeDetected = false;
-    private ImageButton backButtonMenu;
+    private CardView backButtonMenu;
     private TextView menuTextHead;
     private EditText serie;
     private AutoCompleteTextView realizado,obraoevento;
@@ -100,7 +101,7 @@ public class TecnicoActivity extends AppCompatActivity {
             return insets;
         });
         //header
-        backButtonMenu = (ImageButton) findViewById(R.id.back_button_menu);
+        backButtonMenu = (CardView) findViewById(R.id.back_button_menu);
         backButtonMenu.setVisibility(View.VISIBLE);
         backButtonMenu.setOnClickListener(v -> {
             finish();
